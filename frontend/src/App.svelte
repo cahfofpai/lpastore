@@ -8,9 +8,9 @@
 <main>
   <h1>Welcome to the LPAStore!</h1>
 
-  <button on:click={increment}> Add app </button>
-
   <h2>It features <b>{count}</b> apps for GNU/Linux on phones</h2>
+
+  <button on:click={increment}> Add app </button>
 </main>
 
 <style>
