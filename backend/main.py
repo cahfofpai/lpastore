@@ -40,15 +40,15 @@ def startup():
     )
 
     # TODO: Make data dir configurable
-    if not os.path.exists("data"):
-        os.makedirs("data")
+    if not os.path.exists("../data"):
+        os.makedirs("../data")
         # TODO: Unified logging
         print("Data dir created")
 
-    if not os.path.exists("data/apps"):
-        os.makedirs("data/apps")
+    if not os.path.exists("../data/apps"):
+        os.makedirs("../data/apps")
         # TODO: Unified logging
-        print("Dir data/apps created")
+        print("Dir ../data/apps created")
 
 
 @app.get("/")
@@ -58,7 +58,7 @@ def get_root():
 
 @app.get("/apps")
 def get_app_list():
-    dir = "data/apps/"
+    dir = "../data/apps/"
     apps: list[App] = []
     for file in os.listdir(dir):
         apps.append(App.parse_file(f"{dir}{file}"))
@@ -68,7 +68,7 @@ def get_app_list():
 @app.get("/apps/{id}")
 def get_app(id: str):
     try:
-        return App.parse_file(f"data/apps/{id}.json")
+        return App.parse_file(f"../data/apps/{id}.json")
     except:
         # TODO: Other status code when file can not be parsed (although this should not happen)
         raise HTTPException(404)
@@ -77,7 +77,7 @@ def get_app(id: str):
 # TODO: Add information for commit (name, email address, message)
 @app.put("/apps/{id}")
 def create_app(id: str, app: App):
-    with open(f"data/apps/{id}.json", "w") as file:
+    with open(f"../data/apps/{id}.json", "w") as file:
         file.write(json.dumps(app.dict(), indent=4))
     # TODO: Does it make sense to return the app here?
     return app
