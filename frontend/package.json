@@ -1,16 +1,24 @@
 {
-  "name": "lpastore",
-  "private": true,
-  "version": "0.0.0",
-  "license": "AGPL-3.0-only",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
-    "svelte": "^3.44.0",
-    "vite": "^2.9.9"
-  }
+    "name": "lpastore",
+    "private": true,
+    "version": "0.0.0",
+    "license": "AGPL-3.0-only",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "prepare": "npm run smui-theme-light && npm run smui-theme-dark",
+        "smui-theme-light": "smui-theme compile public/smui.css -i src/theme",
+        "smui-theme-dark": "smui-theme compile public/smui-dark.css -i src/theme/dark"
+    },
+    "devDependencies": {
+        "@material/typography": "^13.0.0",
+        "@smui/button": "^6.0.0-beta.16",
+        "@smui/card": "^6.0.0-beta.16",
+        "@smui/common": "^6.0.0-beta.16",
+        "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
+        "smui-theme": "^6.0.0-beta.16",
+        "svelte": "^3.44.0",
+        "vite": "^2.9.9"
+    }
 }
