@@ -34,5 +34,11 @@ npm r <package>
 Update style
 
 ```bash
-npm run prepare
+npm run generate-css
+```
+
+Check for errors
+
+```bash
+npm run check
 ```

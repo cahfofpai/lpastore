@@ -7,18 +7,27 @@
         "dev": "vite",
         "build": "vite build",
         "preview": "vite preview",
-        "prepare": "npm run smui-theme-light && npm run smui-theme-dark",
-        "smui-theme-light": "smui-theme compile public/smui.css -i src/theme",
-        "smui-theme-dark": "smui-theme compile public/smui-dark.css -i src/theme/dark"
+        "generate-css": "smui-theme compile public/smui.css -i src/theme",
+        "check": "svelte-check --tsconfig ./tsconfig.json"
     },
     "devDependencies": {
         "@material/typography": "^13.0.0",
         "@smui/button": "^6.0.0-beta.16",
         "@smui/card": "^6.0.0-beta.16",
         "@smui/common": "^6.0.0-beta.16",
+        "@smui/icon-button": "^6.0.0-beta.16",
+        "@smui/list": "^6.0.0-beta.16",
+        "@smui/menu-surface": "^6.0.0-beta.16",
+        "@smui/textfield": "^6.0.0-beta.16",
+        "@smui/top-app-bar": "^6.0.0-beta.16",
         "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
+        "@tsconfig/svelte": "^3.0.0",
         "smui-theme": "^6.0.0-beta.16",
         "svelte": "^3.44.0",
+        "svelte-check": "^2.8.0",
+        "svelte-preprocess": "^4.10.7",
+        "tslib": "^2.4.0",
+        "typescript": "^4.7.4",
         "vite": "^2.9.9"
     }
 }
