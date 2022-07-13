@@ -11,7 +11,7 @@
 <TopAppBar variant="static">
     <Row>
         <Section class="white">
-            <Title class="material-icons">all_inclusive</Title>
+            <i class="material-icons">all_inclusive</i>
             <Title style="padding-left: 10px;">LPAStore</Title>
         </Section>
         <Section align="end">
