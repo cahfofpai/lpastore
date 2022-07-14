@@ -4,36 +4,22 @@
     "version": "0.0.0",
     "license": "AGPL-3.0-only",
     "scripts": {
-        "dev": "run-p dev:*",
-        "dev:routify": "routify",
-        "dev:vite": "vite",
+        "dev": "vite",
         "preview": "vite preview",
-        "build": "run-s build:*",
-        "build:routify": "routify -b",
-        "build:vite": "vite build",
-        "generate-css": "smui-theme compile public/smui.css -i src/theme",
+        "build": "vite build",
         "check": "svelte-check --tsconfig ./tsconfig.json"
     },
     "devDependencies": {
         "@roxi/routify": "^2.18.4",
         "@sveltejs/vite-plugin-svelte": "^1.0.0-next.34",
-        "npm-run-all": "^4.1.5",
         "svelte": "^3.45.0",
-        "svelte-preprocess": "^4.10.1",
+        "svelte-preprocess": "^4.10.7",
         "vite": "^2.7.10",
-        "@material/typography": "^13.0.0",
-        "@smui/button": "^6.0.0-beta.16",
-        "@smui/card": "^6.0.0-beta.16",
-        "@smui/common": "^6.0.0-beta.16",
-        "@smui/icon-button": "^6.0.0-beta.16",
-        "@smui/list": "^6.0.0-beta.16",
-        "@smui/menu-surface": "^6.0.0-beta.16",
-        "@smui/textfield": "^6.0.0-beta.16",
-        "@smui/top-app-bar": "^6.0.0-beta.16",
         "@tsconfig/svelte": "^3.0.0",
-        "smui-theme": "^6.0.0-beta.16",
         "svelte-check": "^2.8.0",
         "tslib": "^2.4.0",
-        "typescript": "^4.7.4"
+        "typescript": "^4.7.4",
+        "svelte-materialify": "^0.3.11",
+        "@mdi/js": "^6.9.96"
     }
 }
