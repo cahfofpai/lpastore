@@ -16,6 +16,14 @@ Start the backend and frontend
 npm run dev
 ```
 
+Then the application is available:
+
+-   frontend: <http://localhost:3000>
+-   backend: <http://localhost:8000>
+    -   Swagger UI: <http://localhost:8000/docs>
+    -   ReDoc: <http://localhost:8000/redoc>
+    -   openapi.json: <http://localhost:8000/openapi.json>
+
 ### Test the API
 
 You can easily query the API endpoints using curl (and prettify it with jq):
