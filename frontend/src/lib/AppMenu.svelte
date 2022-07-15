@@ -35,7 +35,6 @@
                 <Icon path={mdiPlus} />
             </span>
             Add app
-            <AppAddAppButton />
         </ListItem>
     </Menu>
 </AppBar>

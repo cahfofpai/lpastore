@@ -3,17 +3,22 @@
     "private": true,
     "version": "0.0.0",
     "scripts": {
+        "setup": "run-p setup:*",
+        "setup:frontend": "npm install",
+        "setup:backend": "npm run setup:venv && . venv/bin/activate && pip install -r requirements.txt",
+        "setup:venv": "python -m venv venv",
         "dev": "run-p dev:*",
         "dev:routify": "cd frontend && routify",
         "dev:vite": "cd frontend && vite",
-        "dev:backend": "cd backend && uvicorn main:app --reload",
+        "dev:backend": ". venv/bin/activate && cd backend && uvicorn main:app --reload",
         "dev:generate-api": "sleep 5 && openapi -i http://localhost:8000/openapi.json -o frontend/src/lib/client -c axios",
         "preview": "cd frontend && vite preview",
         "build": "run-s build:*",
         "build:routify": "cd frontend && routify -b",
         "build:vite": "cd frontend && vite build",
         "generate-api": "run-p dev:backend dev:generate-api",
-        "check": "cd frontend && svelte-check --tsconfig ./tsconfig.json"
+        "check": "cd frontend && svelte-check --tsconfig ./tsconfig.json",
+        "clean": "rm -r venv"
     },
     "devDependencies": {
         "@mdi/js": "^6.9.96",
