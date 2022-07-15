@@ -1,16 +1,29 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+import configparser
 import os
 import json
 
 app = FastAPI()
+
+# Load config
+config = configparser.ConfigParser()
+config.read("config.ini")
+
+DATA_DIR = config["Main"]["DataDir"]
+
+APPS_DIR = f"{DATA_DIR}/apps"
+
+# Allow cross origin requests from frontend
 
 origins = [
     "http://localhost:3000"
 ]
 
 app.add_middleware(CORSMiddleware, allow_origins=origins, allow_methods=["*"])
+
+# data models
 
 class App(BaseModel):
     id: str
@@ -45,17 +58,18 @@ def startup():
     """
     )
 
-    # TODO: Make data dir configurable
-    if not os.path.exists("../data"):
-        os.makedirs("../data")
+    # create dir structure for data if it does not exist
+    if not os.path.exists(DATA_DIR):
+        os.makedirs(DATA_DIR)
         # TODO: Unified logging
         print("Data dir created")
 
-    if not os.path.exists("../data/apps"):
-        os.makedirs("../data/apps")
+    if not os.path.exists(APPS_DIR):
+        os.makedirs(APPS_DIR)
         # TODO: Unified logging
-        print("Dir ../data/apps created")
+        print(f"Dir {APPS_DIR} created")
 
+# endpoints
 
 @app.get("/")
 def get_root():
@@ -64,17 +78,16 @@ def get_root():
 
 @app.get("/apps")
 def get_app_list():
-    dir = "../data/apps/"
     apps: list[App] = []
-    for file in os.listdir(dir):
-        apps.append(App.parse_file(f"{dir}{file}"))
+    for file in os.listdir(APPS_DIR):
+        apps.append(App.parse_file(f"{APPS_DIR}/{file}"))
     return apps
 
 
 @app.get("/apps/{id}")
 def get_app(id: str):
     try:
-        return App.parse_file(f"../data/apps/{id}.json")
+        return App.parse_file(f"{APPS_DIR}/{id}.json")
     except:
         # TODO: Other status code when file can not be parsed (although this should not happen)
         raise HTTPException(404)
@@ -83,7 +96,7 @@ def get_app(id: str):
 # TODO: Add information for commit (name, email address, message)
 @app.put("/apps/{id}")
 def update_app(id: str, app: App):
-    with open(f"../data/apps/{id}.json", "w") as file:
+    with open(f"{APPS_DIR}/{id}.json", "w") as file:
         file.write(json.dumps(app.dict(), indent=4))
     # TODO: Does it make sense to return the app here?
     return app
