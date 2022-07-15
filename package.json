@@ -1,0 +1,35 @@
+{
+    "name": "lpastore",
+    "private": true,
+    "version": "0.0.0",
+    "scripts": {
+        "dev": "run-p dev:*",
+        "dev:routify": "cd frontend && routify",
+        "dev:vite": "cd frontend && vite",
+        "dev:backend": "cd backend && uvicorn main:app --reload",
+        "dev:generate-api": "sleep 5 && openapi -i http://localhost:8000/openapi.json -o frontend/src/lib/client -c axios",
+        "preview": "cd frontend && vite preview",
+        "build": "run-s build:*",
+        "build:routify": "cd frontend && routify -b",
+        "build:vite": "cd frontend && vite build",
+        "generate-api": "run-p dev:backend dev:generate-api",
+        "check": "cd frontend && svelte-check --tsconfig ./tsconfig.json"
+    },
+    "devDependencies": {
+        "@mdi/js": "^6.9.96",
+        "@roxi/routify": "^2.18.4",
+        "@sveltejs/vite-plugin-svelte": "^1.0.0-next.34",
+        "@tsconfig/svelte": "^3.0.0",
+        "axios": "^0.27.2",
+        "npm-run-all": "^4.1.5",
+        "openapi-typescript-codegen": "^0.23.0",
+        "svelte": "^3.45.0",
+        "svelte-check": "^2.8.0",
+        "svelte-materialify": "^0.3.11",
+        "svelte-preprocess": "^4.10.7",
+        "tslib": "^2.4.0",
+        "typescript": "^4.7.4",
+        "vite": "^2.7.10",
+        "vite-plugin-rewrite-all": "^0.1.2"
+    }
+}
