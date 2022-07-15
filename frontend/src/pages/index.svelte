@@ -4,9 +4,13 @@
     import { Button } from "svelte-materialify"
     import { goto } from "@roxi/routify"
     import AppAddAppButton from "../lib/AppAddAppButton.svelte"
+    import { DefaultService } from "../lib/client"
 
-    // TODO: Show actual count
-    let count = "0"
+    let app_count = 0
+
+    DefaultService.getRootGet().then((response) => {
+        app_count = response.app_count
+    })
 </script>
 
 <main>
@@ -14,7 +18,7 @@
 
     <br />
 
-    <h4>It features <b>{count}</b> apps for GNU/Linux on phones</h4>
+    <h4>It features <b>{app_count}</b> apps for GNU/Linux on phones</h4>
 
     <br />
 

@@ -73,7 +73,8 @@ def startup():
 
 @app.get("/")
 def get_root():
-    return {"greeting": "Hello world!"}
+    app_count = len(os.listdir(APPS_DIR))
+    return {"app_count": app_count}
 
 
 @app.get("/apps")

@@ -10,7 +10,6 @@
 
     DefaultService.getAppAppsIdGet(app_id).then((response) => {
         app = response
-        console.log(app)
     })
 </script>
 
