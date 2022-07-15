@@ -5,6 +5,7 @@ export let config = {
         url: "http://localhost:8000",
     },
     menu: {
+        // color values are class names provided by Svelte Materialify
         backgroundColor: "deep-orange lighten-1",
         textColor: "white-text",
     },
