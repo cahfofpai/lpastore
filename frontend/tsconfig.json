@@ -17,10 +17,11 @@
         "isolatedModules": true
     },
     "include": [
-        "src/**/*.d.ts",
-        "src/**/*.ts",
-        "src/**/*.js",
-        "src/**/*.svelte"
+        "src/**/*",
+        "src/node_modules",
+        "app_config.js",
+        "src/lib/client"
     ],
+    "exclude": ["node_modules/*", "public/*"],
     "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -6,4 +6,4 @@
 
 <br />
 
-{config.about_text}
+{config.aboutText}

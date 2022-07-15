@@ -1,1 +1,5 @@
-<h3>Add app</h3>
+<script>
+    import AppUpdateApp from "../../lib/AppUpdateApp.svelte"
+</script>
+
+<AppUpdateApp />

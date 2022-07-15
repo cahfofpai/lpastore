@@ -13,6 +13,6 @@
         {/each}
     </div>
     <div>
-        {config.footer.copyright_notice}
+        {config.footer.copyrightNotice}
     </div>
 </Footer>

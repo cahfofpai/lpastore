@@ -1,10 +1,16 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import os
 import json
 
 app = FastAPI()
 
+origins = [
+    "http://localhost:3000"
+]
+
+app.add_middleware(CORSMiddleware, allow_origins=origins, allow_methods=["*"])
 
 class App(BaseModel):
     id: str
@@ -76,7 +82,7 @@ def get_app(id: str):
 
 # TODO: Add information for commit (name, email address, message)
 @app.put("/apps/{id}")
-def create_app(id: str, app: App):
+def update_app(id: str, app: App):
     with open(f"../data/apps/{id}.json", "w") as file:
         file.write(json.dumps(app.dict(), indent=4))
     # TODO: Does it make sense to return the app here?

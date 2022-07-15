@@ -6,4 +6,4 @@
 
 <br />
 
-{config.imprint_text}
+{config.imprintText}

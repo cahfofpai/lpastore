@@ -6,4 +6,4 @@
 
 <br />
 
-{config.contribute_text}
+{config.contributeText}

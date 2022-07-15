@@ -3,6 +3,7 @@
 
     import { Button } from "svelte-materialify"
     import { goto } from "@roxi/routify"
+    import AppAddAppButton from "../lib/AppAddAppButton.svelte"
 
     // TODO: Show actual count
     let count = "0"
@@ -17,7 +18,7 @@
 
     <br />
 
-    <Button on:click={() => $goto("/apps/add")}>Add app</Button>
+    <AppAddAppButton />
 
     <br />
     <br />

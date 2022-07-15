@@ -6,4 +6,4 @@
 
 <br />
 
-{config.privacy_text}
+{config.privacyText}

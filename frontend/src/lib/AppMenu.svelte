@@ -10,22 +10,22 @@
     import { url, goto } from "@roxi/routify"
 </script>
 
-<AppBar class="{config.menu.background_color} {config.menu.text_color}">
+<AppBar class="{config.menu.backgroundColor} {config.menu.textColor}">
     <a
         href={$url("/")}
-        class="{config.menu.text_color} text-decoration-none"
+        class="{config.menu.textColor} text-decoration-none"
         slot="title"
     >
-        <Icon path={mdiAllInclusive} class={config.menu.text_color} />
+        <Icon path={mdiAllInclusive} class={config.menu.textColor} />
         <span>{config.name}</span>
     </a>
     <div style="flex-grow: 1" />
-    <Button fab depressed class={config.menu.background_color}>
+    <Button fab depressed class={config.menu.backgroundColor}>
         <Icon path={mdiMagnify} />
     </Button>
     <Menu right>
         <div slot="activator">
-            <Button fab depressed class={config.menu.background_color}>
+            <Button fab depressed class={config.menu.backgroundColor}>
                 <Icon path={mdiDotsVertical} />
             </Button>
         </div>
@@ -35,6 +35,7 @@
                 <Icon path={mdiPlus} />
             </span>
             Add app
+            <AppAddAppButton />
         </ListItem>
     </Menu>
 </AppBar>
