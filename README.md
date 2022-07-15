@@ -1,18 +1,22 @@
 # LPAStore
 
-Short for _Linux Phone Apps Store_
+Short for _Linux Phone App Store_
 
 ## Development
 
-You can start the backend with
+Set up the dev environment
 
+```bash
+npm run setup
 ```
-uvicorn main:app --reload
+
+Start the backend and frontend
+
+```bash
+npm run dev
 ```
 
-You can easily query the API endpoints using curl (and prettify it with jq): `curl -s localhost:8000 | jq`
-
-### curl
+### Test the API
 
 You can easily query the API endpoints using curl (and prettify it with jq):
 
