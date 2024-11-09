@@ -11,7 +11,7 @@
         "dev:routify": "cd frontend && routify",
         "dev:vite": "cd frontend && vite",
         "dev:backend": ". venv/bin/activate && cd backend && uvicorn main:app --reload",
-        "dev:generate-api": "sleep 5 && openapi -i http://localhost:8000/openapi.json -o frontend/src/lib/client -c axios",
+        "dev:generate-api": "echo 'This command is broken' && exit && sleep 5 && openapi -i http://localhost:8000/openapi.json -o frontend/src/lib/client -c axios",
         "preview": "cd frontend && vite preview",
         "build": "run-s build:*",
         "build:routify": "cd frontend && routify -b",
