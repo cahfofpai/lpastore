@@ -1,7 +1,7 @@
 {
     "name": "lpastore",
     "private": true,
-    "version": "0.0.0",
+    "version": "1.0.0",
     "scripts": {
         "setup": "npm run setup:frontend && npm run setup:backend",
         "setup:frontend": "npm install",
