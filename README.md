@@ -18,7 +18,7 @@ For all dependencies, see `package.json` and `requirements.txt`.
 The app store can be configured using `config_backend.ini` for the backend and `config_frontend.js` for the frontend.
 
 ## Screenshots
-*The app descriptions in the screenshots are quotes from the respective app repositories / websites. The urls of the source of the quotes is not visible in some screenshots because the text area does not display all text at the same time.*
+*The app descriptions in the screenshots are quotes from the respective app repositories / websites. The urls of the sources of the quotes is not visible in some screenshots because the text area does not display all text at the same time.*
 
 Start page
 
@@ -101,3 +101,7 @@ Hint: With zsh it is much easier to edit multi line commands than with bash
 # License
 
 This project is licensed under the [GNU AGPLv3](LICENSE).
+
+The icon used as app icon is "all-inclusive" by [Material Design Icons](https://pictogrammers.com/library/mdi/). The icon itself is licensed under Apache 2.0, see <https://github.com/Templarian/MaterialDesign/blob/master/LICENSE> for more information.
+
+The .gitignore file for the backend directory is copied from https://github.com/github/gitignore/.
